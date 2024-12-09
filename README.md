@@ -54,4 +54,4 @@ This project is a Django-based **Leaderboard Application** that allows you to ma
    cd leaderboard-app
 
 ## **Documentation**
-how to include html file in read (docs/leaderboard.html)
+how to include html file in read (/leaderboard_project/templates/documentation.html)

@@ -40,6 +40,9 @@ urlpatterns = [
     path('user/<int:user_id>/', views.get_user_details, name='get_user_details'),
     path('user/delete/', views.delete_user, name='delete_user'),
     path('grouped/', views.grouped_by_score, name='grouped_by_score'),
+
+    path('documentation/', views.documentation, name='documentation'),
+
     
     path("swagger/", schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-ui"),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),

@@ -104,3 +104,7 @@ def grouped_by_score(request):
         }
 
     return Response(grouped_data)
+
+
+def documentation(request):
+    return render(request, 'documentation.html')
