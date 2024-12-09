@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from leaderboard.models import User, Winner
 from leaderboard.serializers import UserSerializer, WinnerSerializer
 from django.shortcuts import render
+from rest_framework.response import Response
+from rest_framework import status
 
 
 @api_view(['GET'])
@@ -68,16 +70,14 @@ def update_points(request, user_id):
 
 
 @api_view(['DELETE'])
-def delete_user(request):
-    user_id = request.data.get('id')
-    if not user_id:
-        return Response({'error': 'User ID is required'}, status=400)
+def delete_user(request, user_id):
     try:
+        # Retrieve the user by ID and delete
         user = User.objects.get(id=user_id)
         user.delete()
-        return Response({'message': 'User deleted'})
+        return Response({'message': 'User deleted'}, status=status.HTTP_204_NO_CONTENT)
     except User.DoesNotExist:
-        return Response({'error': 'User not found'}, status=404)
+        return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
 
 
 @api_view(['GET'])

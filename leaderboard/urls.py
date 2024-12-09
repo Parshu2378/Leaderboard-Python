@@ -38,7 +38,8 @@ urlpatterns = [
     path('user/', views.add_user, name='add_user'),
     path('user/<int:user_id>/points/', views.update_points, name='update_points'),
     path('user/<int:user_id>/', views.get_user_details, name='get_user_details'),
-    path('user/delete/', views.delete_user, name='delete_user'),
+    path('user/delete/<int:user_id>/', views.delete_user, name='delete_user'),  # Updated URL
+
     path('grouped/', views.grouped_by_score, name='grouped_by_score'),
 
     path('documentation/', views.documentation, name='documentation'),

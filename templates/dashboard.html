@@ -149,7 +149,7 @@
 
         // Delete User
         function deleteUser(userId) {
-            axios.delete('/user/', { data: { id: userId } }).then(() => loadLeaderboard());
+            axios.delete(`/user/delete/${userId}/`).then(() => loadLeaderboard());
         }
 
         // Initialize Leaderboard
