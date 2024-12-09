@@ -10,3 +10,6 @@ class Winner(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     points = models.IntegerField()
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Winner: {self.user.name} at {self.timestamp}"
